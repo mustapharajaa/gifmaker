@@ -48,17 +48,22 @@
 	<div class="pane">
 		<h1>Gif Maker</h1>
 
-		<p>you'd better keep all you images same size</p>
+		<p style="color: rgba(0, 0, 0, 0.7);">you'd better keep all you images same size</p>
 		<input type="range" id="speed" min="1" max="20" value="5" data-speed="5">
 
-		<button id="start" style="display: none;">Create GIF</button>
-		<button id="clear">Clear</button>
+		<button id="clear">Clear Images</button>
+		<button id="start">Create GIF</button>
 		<button id="reset" style="display: none;">Reset</button>
 
-		<div style="margin-top: 20px;">
-			<p>Result Loop:</p>
-			<img id="result" src="a.svg" style="width: 100%; border-radius: 8px; border: 1px solid #ccc;">
-			<button id="download" style="display: none; margin-top: 10px;">Download GIF</button>
+		<div style="margin-top: 20px; position: relative;">
+			<p>Result:</p>
+			<div style="position: relative;">
+				<img id="result" src="a.svg" style="width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+				<div id="popup-message"
+					style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 8px; z-index: 10; font-size: 14px; text-align: center; width: 80%; pointer-events: none;">
+				</div>
+			</div>
+			<button id="download" style="margin-top: 10px;">Download GIF</button>
 		</div>
 	</div>
 

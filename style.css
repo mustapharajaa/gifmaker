@@ -116,9 +116,9 @@ h1 {
 
 .loading {
     display: inline-block !important;
-    animation: spin 2s linear infinite;
-    width: 64px;
-    height: 64px;
+    animation: spin 3s linear infinite;
+    width: 200px !important;
+    height: 200px !important;
     border: none !important;
 }
 
