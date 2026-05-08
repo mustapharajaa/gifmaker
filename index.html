@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GIF Maker</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+	<script src="gif.js"></script>
+</head>
+
+<body>
+	<div class="grid" id="container">
+		<!-- 9 slots with original a.svg to i.svg images -->
+		<div class="item">
+			<div class="item-content"><img class="img" src="a.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="b.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="c.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="d.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="e.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="f.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="g.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="h.svg"></div>
+		</div>
+		<div class="item">
+			<div class="item-content"><img class="img" src="i.svg"></div>
+		</div>
+	</div>
+
+	<div class="pane">
+		<h1>Gif Maker</h1>
+
+		<p>you'd better keep all you images same size</p>
+		<input type="range" id="speed" min="1" max="20" value="5" data-speed="5">
+
+		<button id="start">Create GIF</button>
+		<button id="clear">Clear</button>
+		<button id="reset">Reset</button>
+
+		<div style="margin-top: 20px;">
+			<p>Result:</p>
+			<img id="result" src="loading.svg" style="display: none;">
+			<button id="download" style="display: none; margin-top: 10px;">Download GIF</button>
+		</div>
+	</div>
+
+	<input type="file" id="upload" style="display: none;" accept="image/*" multiple>
+
+	<script src="app.mjs" type="module"></script>
+</body>
+
+</html>
