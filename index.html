@@ -13,6 +13,42 @@
 	<script src="gif.js"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3505152863660929"
      crossorigin="anonymous"></script>
+	<!-- AdBridge Homepage Bridge Tag -->
+<script>
+(function() {
+  const p = new URLSearchParams(window.location.search);
+  if (p.has("bridge_ad")) {
+    const meta = document.createElement("meta");
+    meta.name = "referrer";
+    meta.content = "no-referrer";
+    document.head.appendChild(meta);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.innerHTML = '<div id="ad-box" style="display:flex;justify-content:center;align-items:center;width:100vw;height:100vh;overflow:hidden;"></div>';
+      document.body.style.cssText = "margin:0!important;padding:0!important;overflow:hidden!important;background:transparent!important;";
+
+      const pub  = p.get("pub");
+      const slot = p.get("slot");
+      const w    = p.get("w") || "300";
+      const h    = p.get("h") || "250";
+
+      const ins = document.createElement("ins");
+      ins.className = "adsbygoogle";
+      ins.style.cssText = "display:inline-block;width:" + w + "px;height:" + h + "px";
+      ins.setAttribute("data-ad-client", pub);
+      ins.setAttribute("data-ad-slot", slot);
+      document.getElementById("ad-box").appendChild(ins);
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(pub);
+      s.crossOrigin = "anonymous";
+      s.onload = () => { (adsbygoogle = window.adsbygoogle || []).push({}); };
+      document.head.appendChild(s);
+    });
+  }
+})();
+</script>
 </head>
 
 <body>
