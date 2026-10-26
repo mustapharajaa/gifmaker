@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; display: flex; justify-content: center; align-items: center; }
+  </style>
+</head>
+<body>
+  <div id="ad-slot"></div>
+  <script>
+    const p = new URLSearchParams(window.location.search);
+    const pub = p.get("pub");
+    const slot = p.get("slot");
+    const w = p.get("w") || "300";
+    const h = p.get("h") || "250";
+
+    if (pub && slot) {
+      const ins = document.createElement("ins");
+      ins.className = "adsbygoogle";
+      ins.style.cssText = "display:inline-block;width:" + w + "px;height:" + h + "px";
+      ins.setAttribute("data-ad-client", pub);
+      ins.setAttribute("data-ad-slot", slot);
+      document.getElementById("ad-slot").appendChild(ins);
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(pub);
+      s.crossOrigin = "anonymous";
+      s.onload = () => { (adsbygoogle = window.adsbygoogle || []).push({}); };
+      document.head.appendChild(s);
+    }
+  </script>
+</body>
+</html>
